@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
+
 
 int main() {
+
+    setlocale(LC_ALL, "portuguese");
+
     int numeroGerado;
     int tentativa;
     int tentativas = 10;
@@ -15,14 +20,14 @@ int main() {
         printf("\n=== MENU DO JOGO ===\n");
         printf("1. Jogar\n");
         printf("2. Sair\n");
-        printf("Escolha uma opcao: ");
+        printf("Escolha uma opção: ");
         scanf("%d", &opcao);
 
         if (opcao == 2) {
-            printf("\nAte logo!\n");
+            printf("\nAté logo!\n");
             break;
         } else if (opcao != 1) {
-            printf("\nOpcao invalida! Tente novamente.\n");
+            printf("\nOpção inválida! Tente novamente.\n");
             continue;
         }
 
@@ -44,7 +49,7 @@ int main() {
             scanf("%d", &tentativa);
 
             if (tentativa < 1000 || tentativa > 9999) {
-                printf("O numero deve ter EXATAMENTE 4 digitos! Tente novamente.\n");
+                printf("O número deve ter EXATAMENTE 4 digitos! Tente novamente.\n");
                 continue;
             }
 
@@ -65,9 +70,9 @@ int main() {
             }
 
             if (acertos == 0) {
-                printf("\nVoce nao acertou nenhum digito dessa vez...\n");
+                printf("\nVocê não acertou nenhum digito dessa vez...\n");
             } else {
-                printf("\nVoce acertou %d digito(s) dessa vez...\n", acertos);
+                printf("\nVocê acertou %d digito(s) dessa vez...\n", acertos);
             }
 
             tentativas--;
